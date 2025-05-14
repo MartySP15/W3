@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<title>Whiskey Live 2025 Tasting Notes</title>
+<link rel='manifest' href='manifest.json'>
+<style>
+body{font-family:Arial;margin:0;background:#FAF3E3}
+header{background:#006064;color:#fff;padding:.5rem 1rem;display:flex;align-items:center;gap:.6rem}
+header img{width:40px;height:40px;border-radius:8px}
+main{padding:1rem}
+form{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 0 5px rgba(0,0,0,.1)}
+label{display:block;margin-top:.7rem;font-weight:bold}
+input,select,textarea{width:100%;padding:.5rem;margin-top:.25rem;border:1px solid #ccc;border-radius:4px;box-sizing:border-box}
+input[type=range]{width:90%}
+button{margin-top:1rem;padding:.6rem 1rem;border:none;border-radius:4px;background:#006064;color:#fff}
+h2{margin-top:2rem}
+.entry{background:#fff;padding:.7rem;border-radius:6px;margin-bottom:.6rem;box-shadow:0 0 4px rgba(0,0,0,.05)}
+</style></head><body>
+<header><img src='logo.png'><h1>Whiskey Live 2025 Tasting Notes</h1></header>
+<main>
+<form id='tastingForm'>
+<h2>New Tasting</h2>
+<label>Bottle Photo<input name='photo' type='file' accept='image/*' capture='camera'></label>
+<label>Whiskey Name<input name='name' required></label>
+<label>Distillery<input name='distillery' list='distList'><datalist id='distList'>
+    <option value="Jameson">
+    <option value="Bushmills">
+    <option value="Teeling"></datalist></label>
+<label>Country<select name='country'><option>Ireland</option><option>Scotland</option></select></label>
+<label>Overall Score <span id='scoreShow'>3</span>/5 <input id='scoreRange' type='range' name='score' min='1' max='5' step='0.5' value='3'></label>
+<button type='submit'>Save</button>
+</form>
+<section><h2>Your Tastings</h2><div id='tastings'></div>
+<button id='exportBtn'>Export CSV</button>
+<button id='clearBtn'>Clear</button></section>
+</main>
+<script src='https://unpkg.com/idb-keyval@6/dist/idb-keyval.iife.js'></script>
+<script src='script.js'></script>
+</body></html>
