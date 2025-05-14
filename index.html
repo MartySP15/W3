@@ -22,55 +22,29 @@
 <header><img src="logo.png"><h1>Whiskey Live 2025 Tasting Notes</h1></header>
 <main>
 
+<button id="chooseDirBtn" class="small-btn">📂 Choose Photo Folder</button>
+
 <form id="tastingForm">
 <h2>New Tasting</h2>
-<label>Bottle Photo
- <input name="photo" type="file" accept="image/*" capture="camera"></label>
 
-<label>Whiskey Name & Expression
- <input name="name" required></label>
-
-<label>Distillery / Brand
- <input name="distillery" list="distList" placeholder="Start typing…">
- <datalist id="distList">
+<label>Bottle Photo <input name="photo" type="file" accept="image/*" capture="camera"></label>
+<label>Whiskey Name <input name="name" required></label>
+<label>Distillery <input name="distillery" list="distList" placeholder="Start typing…">
+<datalist id="distList">
     <option value="Jameson">
     <option value="Bushmills Distillery">
     <option value="Teeling Whiskey">
     <option value="Redbreast">
-    <option value="Tullamore DEW">
- </datalist></label>
-
-<label>Type / Style
- <select name="style"><option value="">Select</option><option>Pot Still</option><option>Blended</option><option>Single Malt</option><option>Single Grain</option><option>Rye</option><option>Bourbon</option></select></label>
-
-<label>Country
- <select name="country"><option value="">Select</option><option>Ireland</option><option>Scotland</option><option>USA</option><option>Japan</option></select></label>
-
-<label>Region <input name="region"></label>
-<label>ABV / Proof <input name="abv"></label>
-<label>Age / Vintage <input name="age"></label>
-<label>Cask / Finish <input name="cask"></label>
-<label>Tasting Date <input name="date" type="date" value="2025-05-14"></label>
-
-<label>Appearance <textarea name="appearance"></textarea></label>
-<label>Nose <textarea name="nose"></textarea></label>
-<label>Palate <textarea name="palate"></textarea></label>
-<label>Finish <textarea name="finish"></textarea></label>
-
-<label>Overall Score <span id="scoreShow">3</span>/5
- <input id="scoreRange" name="score" type="range" min="1" max="5" step="0.5" value="3"></label>
-
-<label>Would Buy?
- <select name="buy"><option value="">Select</option><option>Yes</option><option>Maybe</option><option>No</option></select></label>
-
+</datalist></label>
+<label>Country <select name="country"><option value="">Select</option><option>Ireland</option><option>Scotland</option><option>USA</option></select></label>
+<label>Tasting Date <input type="date" name="date" value="2025-05-14"></label>
+<label>Overall Score <span id="scoreShow">3</span>/5 <input id="scoreRange" type="range" name="score" min="1" max="5" step="0.5" value="3"></label>
 <button type="submit">Save Tasting</button>
 </form>
 
-<section>
-<h2>Your Tastings</h2>
+<section><h2>Your Tastings</h2>
 <div id="tastingsList"></div>
 <button id="exportBtn" class="small-btn">Export CSV</button>
-<button id="pdfBtn" class="small-btn">Export PDF</button>
 <button id="clearBtn" class="small-btn">Clear All</button>
 </section>
 </main>
